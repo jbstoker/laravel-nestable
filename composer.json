@@ -39,5 +39,5 @@
                 "Nestable": "Nestable\\Facades\\NestableService"
             }
         }
-    },
+    }
 }
