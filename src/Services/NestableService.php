@@ -817,7 +817,14 @@ class NestableService
      */
     public function openLi(array $li, $extra = '')
     {
-        return "\n".'<li '.$extra.'><a href="'.$li['href'].'">'.$li['label'].'</a>';
+        $attributes = $this->renderAttr($this->optionAttr);
+        $linkClass = '';
+        if($attributes){
+            $extra .= $attributes;
+            $linkClass = 'nav-link';
+        }
+
+        return "\n".'<li '.$extra.'><a class="'.$linkClass.'" href="'.$li['href'].'">'.$li['label'].'</a>';
     }
 
     /**
